@@ -16,7 +16,7 @@ import { StorageRoomDetailsComponent } from "./storage-room-details/storage-room
     RouterModule.forRoot([
       { path: "", component: StorageRoomListComponent },
       {
-        path: "/storage-rooms/:storageRoomName",
+        path: "storage-rooms/:storageRoomId",
         component: StorageRoomDetailsComponent
       }
     ])
