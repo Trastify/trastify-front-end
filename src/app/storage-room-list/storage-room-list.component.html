@@ -3,4 +3,14 @@
 		<a [routerLink]="['storage-rooms',storageRoom.id]">
 			{{storageRoom.name}}
 		</a>
+
+		<p>
+			<button (click) = "contact()" style ="margin-right:5px;">
+        Me interesa
+      </button>
+
+			<button (click) = "addToFavorites()">
+        Añadir a Favoritos
+      </button>
+		</p>
 	</h3>

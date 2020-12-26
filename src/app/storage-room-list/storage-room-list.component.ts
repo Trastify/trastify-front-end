@@ -12,4 +12,12 @@ export class StorageRoomListComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  contact(){
+      window.alert("Propietario contactado");
+  }
+
+  addToFavorites() {
+    window.alert("Añadido a Favoritos");
+  }
 }
