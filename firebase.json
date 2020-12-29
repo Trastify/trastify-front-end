@@ -1,0 +1,17 @@
+{
+  "hosting": {
+	"target": "trastify-front-end",
+    "public": "dist/trastify-front-end",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

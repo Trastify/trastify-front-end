@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "trastify-a43ee": {
+      "hosting": {
+        "trastify-front-end": [
+          "trastify-a43ee"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "trastify-a43ee"
+  }
+}
