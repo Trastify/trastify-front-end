@@ -8,13 +8,21 @@ import { TopBarComponent } from "./top-bar/top-bar.component";
 
 import { StorageRoomListComponent } from "./storage-room-list/storage-room-list.component";
 import { StorageRoomDetailsComponent } from "./storage-room-details/storage-room-details.component";
-import { NewOwnerComponent } from "./new-owner/new-owner.component";
+import { NewStorageRoomComponent } from './new-storage-room/new-storage-room.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+
+
+ 
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       { path: "", component: StorageRoomListComponent },
       {
@@ -22,8 +30,16 @@ import { NewOwnerComponent } from "./new-owner/new-owner.component";
         component: StorageRoomDetailsComponent
       },
       {
-        path: "new-owner",
-        component: NewOwnerComponent
+        path: "new-storage-room",
+        component: NewStorageRoomComponent
+      },
+      {
+        path: "login",
+        component: LoginComponent
+      },
+      {
+        path: "signup",
+        component: SignupComponent
       }
     ])
   ],
@@ -32,7 +48,9 @@ import { NewOwnerComponent } from "./new-owner/new-owner.component";
     TopBarComponent,
     StorageRoomListComponent,
     StorageRoomDetailsComponent,
-    NewOwnerComponent
+    NewStorageRoomComponent,
+    LoginComponent,
+    SignupComponent
   ],
   bootstrap: [AppComponent]
 })

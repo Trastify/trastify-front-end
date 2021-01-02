@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,12 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  isSignedIn: boolean = false;
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.isSignedIn = this.authService.isSignedIn();
+  }
+
+  signup() {
+    if (this.isSignedIn) {
+      console.log('Creamos trastero');
+      this.router.navigateByUrl('new-storage-room');
+    } else {
+      this.router.navigateByUrl('signup');
+    }
+  }
+
+  logout() {
+    this.authService.logout();
+    this.isSignedIn = false;
   }
 
 }
+
+
 
 
 /*
